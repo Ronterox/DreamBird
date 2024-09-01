@@ -32,20 +32,17 @@ const tokenize = (code: string): Token[] => {
         if ('()'.includes(current)) {
             push(TokenType.Parenthesis, current);
             continue;
-
         }
 
         if (/[0-9]/.test(current)) {
-            while (/[0-9]/.test(code.charAt(++i))) current += code.charAt(i);
+            while (/[0-9]/.test(code.charAt(i+1))) current += code.charAt(++i);
             push(TokenType.Number, Number(current));
-            i--;
             continue;
         }
 
         if (/[a-zA-Z_]/.test(current)) {
-            while (/[a-zA-Z_]/.test(code.charAt(++i))) current += code.charAt(i);
+            while (/[a-zA-Z_]/.test(code.charAt(i+1))) current += code.charAt(++i);
             push(TokenType.Name, current);
-            i--;
             continue;
         }
 
