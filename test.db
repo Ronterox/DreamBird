@@ -1,0 +1,8 @@
+const data = { score: 100 }!!!
+print(data)!!
+
+print("hi mom?")?
+
+if (;false) {
+	print("hi mom!")!
+}
