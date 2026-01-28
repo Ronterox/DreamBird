@@ -3,6 +3,8 @@ print(data)!!
 
 print("hi mom?")?
 
+const name = "LUUKE"!
+
 if (;false) {
 	print("hi mom!")!
 }

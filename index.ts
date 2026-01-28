@@ -1,29 +1,18 @@
-import { type ConfigAPI, type PluginObj, types as t } from "@babel/core";
+import { transformFileSync } from "@babel/core";
+import plugin from "./plugin.ts";
+import Bun from "bun";
 
-export default function (api: ConfigAPI): PluginObj {
-	return {
-		visitor: {
-			Statement(path) {
-				if (path.node.trailingComments) {
-					switch (path.node.trailingComments[0]!.value) {
-						case '?':
-							path.insertBefore(
-								t.callExpression(
-									t.identifier('console.log'),
-									[t.stringLiteral(JSON.stringify(path.node.expression!))]
-								)
-							);
-							break;
-						default:
-							break;
-					}
-				}
-			},
-			CallExpression(path) {
-				if (path.node.callee.name! === 'print') {
-					path.replaceWith(t.callExpression(t.identifier('console.log'), path.node.arguments));
-				}
-			}
-		}
-	};
-}
+// bun build index.ts > index.js && cat test.db | sed 's/;/!/g' | sed 's/\\([!?]*\\)$/; \\/\\/\\1/g' > test.js
+const content = (await Bun.file("test.db").text())
+	.replaceAll(";", "!")
+	.replace(/([!?]+)\s*$/gm, "; // $1")
+
+await Bun.file("test.js").write(content);
+
+const output = transformFileSync("./test.js", {
+	plugins: [plugin],
+});
+
+await Bun.file("test.js").delete();
+
+console.log(output?.code);

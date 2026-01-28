@@ -3,9 +3,7 @@
 	"module": "index.ts",
 	"type": "module",
 	"scripts": {
-		"start": "bun run prep && bunx babel test.js --plugins ./index.js && bun run clean",
-		"prep": "bun build index.ts > index.js && cat test.db | sed 's/;/!/g' | sed 's/\\([!?]*\\)$/; \\/\\/\\1/g' > test.js",
-		"clean": "rm -f index.js test.js"
+		"start": "bun index.ts"
 	},
 	"devDependencies": {
 		"@types/babel__core": "^7.20.5",

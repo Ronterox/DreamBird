@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+# @cmd Parses the test file and outputs it to stdout
+parse() {
+	bun start
+}
+
+# @cmd Builds the comtranspiler
+build() {
+    echo TODO build
+}
+
+# @cmd Parses the test file and runs it
+run() {
+	parse | bun -
+}
+
+# See more details at https://github.com/sigoden/argc
+eval "$(start-tool extend)"
+eval "$(argc --argc-eval "$0" "$@")"
