@@ -3,7 +3,11 @@ print(data)!!
 
 print("hi mom?")?
 
+const const fname = "LUKE"!
+
 const name = "LUUKE"!
+// name.pop()!
+// name.pop()!
 
 if (;false) {
 	print("hi mom!")!

@@ -6,6 +6,10 @@ import Bun from "bun";
 const content = (await Bun.file("test.db").text())
 	.replaceAll(";", "!")
 	.replace(/([!?]+)\s*$/gm, "; // $1")
+	.replace(/const const (.*)/gm, "const $1 // const")
+
+// console.log(content);
+// process.exit(1);
 
 await Bun.file("test.js").write(content);
 
