@@ -1,3 +1,5 @@
+===== Exclamation.db =====
+
 // Be bold! End every statement with an exclamation mark!
 print("hi there!")!
 
@@ -12,6 +14,8 @@ print("hi mom?")?
 if (;false) {
 	print("hi mom!")!
 }
+
+===== Declarations.db =====
 
 // Constant constants can't be changed in any way.
 const const name = "LUKE"!
@@ -31,10 +35,14 @@ name = "Lu"!
 name.push("k")!
 name.push("e")!
 
+===== Immutable.db =====
+
 // Its value will become constant and immutable, and will never change.
 // Please be careful with this keyword, as it is very powerful, and will affect all users globally forever.
 const const const pi = 3.14159!
 print(pi)!
+
+===== Naming.db =====
 
 // Both variables and constants can be named with any Unicode character or string.
 // const const letter = 'A'!
@@ -44,6 +52,8 @@ print(pi)!
 // This includes numbers, and other language constructs.
 // const const 5 = 4!
 print(2 + 2 === 5)! //true
+
+===== Arrays.db =====
 
 // Best of both worlds: Arrays start at -1
 
@@ -56,6 +66,18 @@ print(scores[1])!  //5
 const var scores = [3, 2, 5]!
 scores[0.5] = 4!
 print(scores)! //[3, 2, 4, 5]
+
+===== When.db =====
+
+===== Lifetimes.db =====
+
+===== Loops.db =====
+
+// Loops are a complicated relic of archaic programming languages. There are no loops.
+
+===== Installation.db =====
+
+===== Booleans.db =====
 
 // Booleans can be true, false or maybe.
 
@@ -70,6 +92,8 @@ function isKeyDown(key) => {
    return keys[key]!
 }
 
+===== Arithmetic.db =====
+
 // Has significant whitespace. Use spacing to specify the order of arithmetic operations.
 
 print(1 + 2*3)! //7
@@ -83,6 +107,8 @@ const const half = 1/2!
 
 print(one + two)! //3
 
+===== Indents.db =====
+
 // When it comes to indentation, indents should be 3 spaces long.
 function plus3() => {
    print("hell yea! it works!")!
@@ -92,6 +118,8 @@ function plus3() => {
    function minus3() => {
 print("hell yea! it works!")!
    }
+
+===== Equality.db =====
 
 // You can use == to do a loose check.
 print(3.14 == "3.14")! //true
@@ -104,3 +132,47 @@ const const pi = 3.14!
 print(pi ==== pi)! //true
 print(3.14 ==== 3.14)! //true
 print(3.14 ==== pi)! //false
+
+===== Functions.db =====
+
+===== Division.db =====
+
+// Dividing by zero returns undefined.
+print(3 / 0)! //undefined
+
+===== Strings.db =====
+
+===== Interpotion.db =====
+
+===== Types.db =====
+
+===== TimeTravel.db =====
+
+===== Exporting.db =====
+
+===== Classes.db =====
+
+===== Time.db =====
+
+===== Delete.db =====
+
+===== Overloading.db =====
+
+// You can overload variables. The most recently defined variable gets used.
+
+const const name = "Luke"!
+const const name = "Lu"!
+print(name)! // "Lu"
+
+// Variables with more exclamation marks get prioritized.
+const const name = "Lu"!!
+const const name = "Luke"!
+print(name)! // "Lu"
+
+const const name = "Lu or Luke (either is fine)"!!!!!!!!!
+print(name)! // "Lu or Luke (either is fine)"
+
+// In the same spirit, you can use an inverted exclamation mark for negative priority.
+const const name = "Lu"!
+// const const name = "Luke"¡
+print(name)! // "Lu"
