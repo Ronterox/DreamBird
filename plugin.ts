@@ -51,9 +51,6 @@ export default function (): PluginObj {
 								}
 								path.remove();
 								break;
-							case "precise":
-								// console.log(path.node.declarations);
-								break;
 						}
 					}
 				}
@@ -70,6 +67,14 @@ export default function (): PluginObj {
 							)
 						);
 						return;
+					}
+				}
+			},
+			BinaryExpression(path) {
+				if (path.node.operator === "===") {
+					const { left, right } = path.node;
+					if (left.trailingComments && left.trailingComments[0]!.value === "=" && left.type !== right.type) {
+						path.replaceWith(t.booleanLiteral(false));
 					}
 				}
 			},

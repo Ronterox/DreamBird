@@ -49,7 +49,7 @@ const content = (await Bun.file(filepath).text()).split("\n").reduce((acc, line)
 	.replace(/var\s*var/gm, "let")
 	.replace(/const\s*const\s*const\s*(.*)/gm, "const $1 // constant")
 	.replace(/const\s*const\s*(.*)/gm, "const $1 // const")
-	.replace(/(.*)\s*====\s*(.*)/gm, "$1 === $2 // precise")
+	.replace(/(.*)\s*====\s*(.*)/gm, "$1 /*=*/=== $2")
 	.replace(/=>\s*{/gm, "{")
 
 // console.log(content);
