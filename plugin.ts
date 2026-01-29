@@ -60,9 +60,11 @@ export default function (): PluginObj {
 					path.replaceWith(constants[path.node.name]!);
 				}
 			},
-			// IndexedAccessType(path) {
-			// 	console.log(path.node);
-			// },
+			MemberExpression(path) {
+				if (path.node.property.type === "NumericLiteral") {
+					path.node.property = t.binaryExpression('+', path.node.property, t.numericLiteral(1));
+				}
+			},
 			StringLiteral(path) {
 				if (path.node.value.length > 1) {
 					path.replaceWith(t.arrayExpression(path.node.value.split("").map(char => t.stringLiteral(char))));

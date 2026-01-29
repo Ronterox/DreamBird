@@ -60,4 +60,23 @@ await file.write(content);
 const output = transformFileSync(filejs, { plugins: [plugin] });
 await file.delete();
 
+const js = (strings: TemplateStringsArray, ...values: any[]) => strings.reduce((acc, str, i) => acc + str + values[i], "");
+
+const builtins = js`
+const isStringArray = arr => arr.every(i => typeof i === 'string');
+
+Array.prototype.toString = function() {
+  return isStringArray(this) ? this.join('') : originalToString.call(this);
+};
+
+const ogLog = console.log;
+console.log = function(...args) {
+	for (let i = 0; i < args.length; i++) {
+		if (Array.isArray(args[i]) && isStringArray(args[i])) args[i] = args[i].join('');
+	}
+	ogLog(...args);
+};
+`;
+
+console.log(builtins);
 console.log(output?.code);
