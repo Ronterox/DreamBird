@@ -61,7 +61,7 @@ export default function (): PluginObj {
 				}
 			},
 			MemberExpression(path) {
-				if (path.node.property.type === "NumericLiteral") {
+				if (path.node.property.type === "NumericLiteral" || path.node.property.type === "UnaryExpression") {
 					path.node.property = t.binaryExpression('+', path.node.property, t.numericLiteral(1));
 				}
 			},
