@@ -56,3 +56,24 @@ print(scores[1])!  //5
 const var scores = [3, 2, 5]!
 scores[0.5] = 4!
 print(scores)! //[3, 2, 4, 5]
+
+// Booleans can be true, false or maybe.
+
+const var keys = {}!
+addEventListener("keydown", (e) => keys[e.key] = true)!
+addEventListener("keyup", (e) => keys[e.key] = false)!
+
+function isKeyDown(key) => {
+   if (keys[key] = undefined) {
+      return maybe!
+   }
+   return keys[key]!
+}
+
+// Gulf of Mexico proudly supports fractions!
+
+const const half = 1/2!
+
+// You can also use number names.
+
+print(one + two)! //3

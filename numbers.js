@@ -1,0 +1,112 @@
+const one = 1; // constant
+const two = 2; // constant
+const three = 3; // constant
+const four = 4; // constant
+const five = 5; // constant
+const six = 6; // constant
+const seven = 7; // constant
+const eight = 8; // constant
+const nine = 9; // constant
+const ten = 10; // constant
+
+const eleven = 11; // constant
+const twelve = 12; // constant
+const thirteen = 13; // constant
+const fourteen = 14; // constant
+const fifteen = 15; // constant
+const sixteen = 16; // constant
+const seventeen = 17; // constant
+const eighteen = 18; // constant
+const nineteen = 19; // constant
+const twenty = 20; // constant
+
+const twentyone = 21; // constant
+const twentytwo = 22; // constant
+const twentythree = 23; // constant
+const twentyfour = 24; // constant
+const twentyfive = 25; // constant
+const twentysix = 26; // constant
+const twentyseven = 27; // constant
+const twentyeight = 28; // constant
+const twentynine = 29; // constant
+const thirty = 30; // constant
+
+const thirtyone = 31; // constant
+const thirtytwo = 32; // constant
+const thirtythree = 33; // constant
+const thirtyfour = 34; // constant
+const thirtyfive = 35; // constant
+const thirtysix = 36; // constant
+const thirtyseven = 37; // constant
+const thirtyeight = 38; // constant
+const thirtynine = 39; // constant
+const forty = 40; // constant
+
+const fortyone = 41; // constant
+const fortytwo = 42; // constant
+const fortythree = 43; // constant
+const fortyfour = 44; // constant
+const fortyfive = 45; // constant
+const fortysix = 46; // constant
+const fortyseven = 47; // constant
+const fortyeight = 48; // constant
+const fortynine = 49; // constant
+const fifty = 50; // constant
+
+const fiftyone = 51; // constant
+const fiftytwo = 52; // constant
+const fiftythree = 53
+const fiftyfour = 54; // constant
+const fiftyfive = 55; // constant
+const fiftysix = 56; // constant
+const fiftyseven = 57; // constant
+const fiftyeight = 58; // constant
+const fiftynine = 59; // constant
+const sixty = 60; // constant
+
+const sixtyone = 61; // constant
+const sixtytwo = 62; // constant
+const sixtythree = 63; // constant
+const sixtyfour = 64; // constant
+const sixtyfive = 65; // constant
+const sixtysix = 66; // constant
+const sixtyseven = 67; // constant
+const sixtyeight = 68; // constant
+const sixtynine = 69; // constant
+const seventy = 70; // constant
+
+const seventyone = 71; // constant
+const seventytwo = 72; // constant
+const seventythree = 73; // constant
+const seventyfour = 74; // constant
+const seventyfive = 75; // constant
+const seventysix = 76; // constant
+const seventyseven = 77; // constant
+const seventyeight = 78; // constant
+const seventynine = 79; // constant
+const eighty = 80; // constant
+
+const eightyone = 81; // constant
+const eightytwo = 82; // constant
+const eightythree = 83; // constant
+const eightyfour = 84; // constant
+const eightyfive = 85; // constant
+const eightysix = 86; // constant
+const eightyseven = 87; // constant
+const eightyeight = 88; // constant
+const eightynine = 89; // constant
+const ninety = 90; // constant
+
+const ninetyone = 91; // constant
+const ninetytwo = 92; // constant
+const ninetythree = 93; // constant
+const ninetyfour = 94
+const ninetyfive = 95; // constant
+const ninetysix = 96; // constant
+const ninetyseven = 97; // constant
+const ninetyeight = 98; // constant
+const ninetynine = 99; // constant
+
+const hundred = 100; // constant
+const thousand = 1000; // constant
+const million = 1000000; // constant
