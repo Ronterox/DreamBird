@@ -55,14 +55,30 @@ export default function (): PluginObj {
 					}
 				}
 			},
+			AssignmentExpression(path) {
+				if (path.node.left.type === "MemberExpression") {
+					const property = path.node.left.property;
+					if (property.type === "NumericLiteral" && (property.value + "").includes(".")) {
+						const arrname = path.node.left.object.name!;
+						path.replaceWith(
+							t.callExpression(
+								t.identifier(`${arrname}.splice`),
+								[t.numericLiteral(Math.round(property.value + 1)), t.numericLiteral(0), path.node.right]
+							)
+						);
+						return;
+					}
+				}
+			},
 			Identifier(path) {
 				if (constants[path.node.name]) {
 					path.replaceWith(constants[path.node.name]!);
 				}
 			},
 			MemberExpression(path) {
-				if (path.node.property.type === "NumericLiteral" || path.node.property.type === "UnaryExpression") {
-					path.node.property = t.binaryExpression('+', path.node.property, t.numericLiteral(1));
+				const property = path.node.property;
+				if (property.type === "NumericLiteral" || property.type === "UnaryExpression") {
+					path.node.property = t.binaryExpression('+', property, t.numericLiteral(1));
 				}
 			},
 			StringLiteral(path) {
