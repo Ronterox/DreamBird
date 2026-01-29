@@ -3,7 +3,7 @@
 	"module": "index.ts",
 	"type": "module",
 	"scripts": {
-		"dev": "bun run index.ts -- test.db"
+		"dev": "bun run index.ts -- Test.db"
 	},
 	"devDependencies": {
 		"@types/babel__core": "^7.20.5",

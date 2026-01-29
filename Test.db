@@ -176,3 +176,50 @@ print(name)! // "Lu or Luke (either is fine)"
 const const name = "Lu"!
 // const const name = "Luke"¡
 print(name)! // "Lu"
+
+===== Semantics.db =====
+
+// Support for semantic naming.
+
+const const sName = "Lu"!
+const const iAge = 29!
+const const bHappy = true!
+
+// You can now make globals!
+
+const const g_fScore = 4.5!
+
+===== Reversing.db =====
+
+// You can reverse the direction of your code.
+
+const const message = "Hello"!
+print(message)!
+const const message = "world"!
+reverse!
+
+===== ClassNames.db =====
+
+// For maximum compatibility with other languages, you can also use the className keyword when making classes.
+
+// className Player {
+//    const var health = 10!
+// }
+
+===== DBX.db =====
+
+===== RichText.db =====
+
+===== Async.db =====
+
+===== Signals.db =====
+
+===== AI.db =====
+
+===== Copilot.db =====
+
+// It's worth noting that GitHub CoPilot doesn't understand Dreambird, which means that MicroSlop won't be
+// able to steal your code.
+//
+// This is great for when you want to keep your open-sourced project closed-source.
+
