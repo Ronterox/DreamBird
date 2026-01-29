@@ -8,30 +8,40 @@ print("hi there mooom!")!!!
 // It prints debug info about that line to the console for you.
 print("hi mom?")?
 
+// That's simple - the 'not' operator is a semi-colon instead
+if (;false) {
+	print("hi mom!")!
+}
+
 // Constant constants can't be changed in any way.
-const const aname = "LUKE"!
+const const name = "LUKE"!
 
 // Constant variables can be edited, but not re-assigned.
-const var cname = "LUUKE"!
-cname.pop()!
-cname.pop()!
+const var name = "LUUKE"!
+name.pop()!
+name.pop()!
 
 // Variable constants can be re-assigned, but not edited.
-var const dname = "LUUKE"!
-dname = "Lu"!
+var const name = "LUUKE"!
+name = "Lu"!
 
 // Variable variables can be re-assigned and edited.
-var var ename = "LUUKE"!
-ename = "Lu"!
-ename.push("k")!
-ename.push("e")!
+var var name = "LUUKE"!
+name = "Lu"!
+name.push("k")!
+name.push("e")!
 
 // Its value will become constant and immutable, and will never change.
 // Please be careful with this keyword, as it is very powerful, and will affect all users globally forever.
 const const const pi = 3.14159!
 print(pi)!
 
-// That's simple - the 'not' operator is a semi-colon instead
-if (;false) {
-	print("hi mom!")!
-}
+// Both variables and constants can be named with any Unicode character or string.
+// const const letter = 'A'!
+// var const 👍 = true!
+// var var 1️⃣ = 1!
+
+// This includes numbers, and other language constructs.
+// const const 5 = 4!
+print(2 + 2 === 5)! //true
+

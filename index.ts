@@ -4,10 +4,10 @@ import Bun from "bun";
 
 const content = (await Bun.file("test.db").text())
 	.replaceAll(";", "!")
-	.replace(/([!?]+)\s*$/gm, "; // $1")
+	.replace(/([!?]+)\s*(\/\/.*)?$/gm, "; // $1")
 	.replace(/const\s*var/gm, "const")
-	.replace(/var\s*const\s*(.*)/gm, "var $1 // const")
-	.replace(/var\s*var/gm, "var")
+	.replace(/var\s*const\s*(.*)/gm, "let $1 // const")
+	.replace(/var\s*var/gm, "let")
 	.replace(/const\s*const\s*const\s*(.*)/gm, "const $1 // constant")
 	.replace(/const\s*const\s*(.*)/gm, "const $1 // const")
 
