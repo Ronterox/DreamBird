@@ -1,13 +1,24 @@
-const data = { score: 100 }!!!
-print(data)!!
+print("hi there!")!!
 
 print("hi mom?")?
 
-const const fname = "LUKE"!
+// Constant constants can't be changed in any way.
+const const aname = "LUKE"!
 
-const name = "LUUKE"!
-// name.pop()!
-// name.pop()!
+// Constant variables can be edited, but not re-assigned.
+const var cname = "LUUKE"!
+// cname.pop()!
+// cname.pop()!
+
+// Variable constants can be re-assigned, but not edited.
+var const dname = "LUUKE"!
+dname = "Lu"!
+
+// Variable variables can be re-assigned and edited.
+var var ename = "LUUKE"!
+ename = "Lu"!
+// ename.push("k")!
+// ename.push("e")!
 
 if (;false) {
 	print("hi mom!")!
