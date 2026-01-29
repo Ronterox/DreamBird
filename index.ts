@@ -8,6 +8,7 @@ const content = (await Bun.file("test.db").text())
 	.replace(/const\s*var/gm, "const")
 	.replace(/var\s*const\s*(.*)/gm, "var $1 // const")
 	.replace(/var\s*var/gm, "var")
+	.replace(/const\s*const\s*const\s*(.*)/gm, "const $1 // constant")
 	.replace(/const\s*const\s*(.*)/gm, "const $1 // const")
 
 // console.log(content);

@@ -1,5 +1,11 @@
-print("hi there!")!!
+// Be bold! End every statement with an exclamation mark!
+print("hi there!")!
 
+// If you're feeling extra-bold, you can use even more!!!
+print("hi there mooom!")!!!
+
+// You can put a question mark at the end of a line instead.
+// It prints debug info about that line to the console for you.
 print("hi mom?")?
 
 // Constant constants can't be changed in any way.
@@ -7,8 +13,8 @@ const const aname = "LUKE"!
 
 // Constant variables can be edited, but not re-assigned.
 const var cname = "LUUKE"!
-// cname.pop()!
-// cname.pop()!
+cname.pop()!
+cname.pop()!
 
 // Variable constants can be re-assigned, but not edited.
 var const dname = "LUUKE"!
@@ -17,9 +23,15 @@ dname = "Lu"!
 // Variable variables can be re-assigned and edited.
 var var ename = "LUUKE"!
 ename = "Lu"!
-// ename.push("k")!
-// ename.push("e")!
+ename.push("k")!
+ename.push("e")!
 
+// Its value will become constant and immutable, and will never change.
+// Please be careful with this keyword, as it is very powerful, and will affect all users globally forever.
+const const const pi = 3.14159!
+print(pi)!
+
+// That's simple - the 'not' operator is a semi-colon instead
 if (;false) {
 	print("hi mom!")!
 }
