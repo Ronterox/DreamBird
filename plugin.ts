@@ -44,13 +44,16 @@ export default function (): PluginObj {
 								for (const d of path.node.declarations) {
 									d.init = t.callExpression(t.identifier('Object.freeze'), [d.init!]);
 								}
-								break
+								break;
 							case "constant":
 								for (const d of path.node.declarations) {
 									constants[d.id.name] = t.callExpression(t.identifier('Object.freeze'), [d.init!]);
 								}
 								path.remove();
-								break
+								break;
+							case "precise":
+								// console.log(path.node.declarations);
+								break;
 						}
 					}
 				}

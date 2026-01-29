@@ -1,9 +1,10 @@
 const isStringArray = arr => arr.every(i => typeof i === 'string');
+const isNumberArray = arr => arr.every(i => typeof i === 'number');
 const ogToString = Array.prototype.toString;
 const ogLog = console.log;
 
 Array.prototype.toString = function () {
-	return isStringArray(this) ? this.join('') : ogToString.call(this);
+	return isStringArray(this) || isNumberArray(this) ? this.join('') : ogToString.call(this);
 };
 
 console.log = function (...args) {

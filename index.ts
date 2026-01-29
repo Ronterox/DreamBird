@@ -49,6 +49,7 @@ const content = (await Bun.file(filepath).text()).split("\n").reduce((acc, line)
 	.replace(/var\s*var/gm, "let")
 	.replace(/const\s*const\s*const\s*(.*)/gm, "const $1 // constant")
 	.replace(/const\s*const\s*(.*)/gm, "const $1 // const")
+	.replace(/(.*)\s*====\s*(.*)/gm, "$1 === $2 // precise")
 	.replace(/=>\s*{/gm, "{")
 
 // console.log(content);
@@ -64,5 +65,7 @@ await file.write(numbers + content);
 const output = transformFileSync(filejs, { plugins: [plugin] });
 await file.delete();
 
-console.log(builtins);
-console.log(output?.code);
+console.log(
+	builtins +
+	output?.code?.replace(/\/\/.*$/gm, "").replace(/\n{3,}/g, "\n\n")
+);

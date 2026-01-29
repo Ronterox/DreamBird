@@ -55,7 +55,7 @@ const fifty = 50; // constant
 
 const fiftyone = 51; // constant
 const fiftytwo = 52; // constant
-const fiftythree = 53
+const fiftythree = 53; // constant
 const fiftyfour = 54; // constant
 const fiftyfive = 55; // constant
 const fiftysix = 56; // constant
@@ -100,7 +100,7 @@ const ninety = 90; // constant
 const ninetyone = 91; // constant
 const ninetytwo = 92; // constant
 const ninetythree = 93; // constant
-const ninetyfour = 94
+const ninetyfour = 94; // constant
 const ninetyfive = 95; // constant
 const ninetysix = 96; // constant
 const ninetyseven = 97; // constant

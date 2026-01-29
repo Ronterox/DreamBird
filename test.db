@@ -93,3 +93,14 @@ function plus3() => {
 print("hell yea! it works!")!
    }
 
+// You can use == to do a loose check.
+print(3.14 == "3.14")! //true
+
+// You can use === to do a more precise check.
+print(3.14 === "3.14")! //false
+
+// You can use ==== to be EVEN MORE precise!
+const const pi = 3.14!
+print(pi ==== pi)! //true
+print(3.14 ==== 3.14)! //true
+print(3.14 ==== pi)! //false
