@@ -25,18 +25,18 @@ const content = (await Bun.file(filepath).text()).split("\n").reduce((acc, line)
 		const left = identifier!.trim().split(" ");
 		const varname = left[left.length - 1]!;
 
-		if (variables[varname]) {
-			left[left.length - 1] = varname + variables[varname]++;
+		if (variables[varname] !== undefined) {
+			left[left.length - 1] = varname + ++variables[varname];
 			acc.push(left.join(" ") + "=" + expression);
 		} else {
-			variables[varname] = 1;
+			variables[varname] = 0;
 			acc.push(line);
 		}
 		return acc;
 	}
 
 	const ident = includesVariable(line);
-	if (ident) line = line.replaceAll(ident, ident + variables[ident]);
+	if (ident) line = line.replaceAll(ident, ident + (variables[ident] || ""));
 
 	acc.push(line);
 	return acc;

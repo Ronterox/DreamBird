@@ -60,6 +60,21 @@ export default function (): PluginObj {
 					path.replaceWith(constants[path.node.name]!);
 				}
 			},
+			// IndexedAccessType(path) {
+			// 	console.log(path.node);
+			// },
+			StringLiteral(path) {
+				if (path.node.value.length > 1) {
+					path.replaceWith(t.arrayExpression(path.node.value.split("").map(char => t.stringLiteral(char))));
+				}
+			},
+			NumberLiteral(path) {
+				const numval = path.node.value;
+				if ((numval + "").includes(".")) return;
+				if (numval > 9 || numval < -9) {
+					path.replaceWith(t.arrayExpression((numval + "").split("").map(num => t.numericLiteral(+num))));
+				}
+			},
 			CallExpression(path) {
 				if (path.node.callee.name! === 'print') {
 					path.replaceWith(t.callExpression(t.identifier('console.log'), path.node.arguments));
