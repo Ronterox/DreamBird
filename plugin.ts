@@ -71,11 +71,23 @@ export default function (): PluginObj {
 				}
 			},
 			BinaryExpression(path) {
-				if (path.node.operator === "===") {
-					const { left, right } = path.node;
-					if (left.trailingComments && left.trailingComments[0]!.value === "=" && left.type !== right.type) {
-						path.replaceWith(t.booleanLiteral(false));
-					}
+				switch (path.node.operator) {
+					case "===":
+						const { left, right } = path.node;
+						if (left.trailingComments && left.trailingComments[0]!.value === "=" && left.type !== right.type) {
+							path.replaceWith(t.booleanLiteral(false));
+						}
+						break;
+					case "/":
+						path.replaceWith(
+							t.conditionalExpression(
+								t.binaryExpression("===", path.node, t.identifier("Infinity")),
+								t.identifier("Infinity"),
+								t.identifier("undefined")
+							)
+						);
+						path.skip();
+						break;
 				}
 			},
 			Identifier(path) {
@@ -90,9 +102,8 @@ export default function (): PluginObj {
 				}
 			},
 			StringLiteral(path) {
-				if (path.node.value.length > 1) {
-					path.replaceWith(t.arrayExpression(path.node.value.split("").map(char => t.stringLiteral(char))));
-				}
+				path.replaceWith(t.arrayExpression(path.node.value.split("").map(char => t.stringLiteral(char))));
+				path.skip();
 			},
 			NumberLiteral(path) {
 				const numval = path.node.value;
